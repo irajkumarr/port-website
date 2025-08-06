@@ -50,7 +50,7 @@ export default function Portfolio() {
       tech: ["Flutter", "NodeJS", "Express", "MongoDB"],
       type: "Full Stack App",
       badgeColor: "blue",
-      url: "",
+      url: "https://github.com/learnwithraj/servicing_maintenance_app",
     },
     {
       title: "Rojgari - Job Seeker Platform",
@@ -58,7 +58,7 @@ export default function Portfolio() {
       tech: ["Flutter", "NodeJS", "Express", "MongoDB", "JWT"],
       type: "Full Stack App",
       badgeColor: "green",
-      url: "",
+      url: "https://github.com/learnwithraj/job-seeker-application",
     },
     {
       title: "Kirana - Grocery Shopping App",
@@ -74,7 +74,7 @@ export default function Portfolio() {
       tech: ["Flutter", "NodeJS", "MongoDB", "Firebase Notifications"],
       type: "Full Stack App",
       badgeColor: "red",
-      url: "",
+      url: "https://github.com/learnwithraj/chulesi-foodDelivery-app-frontend",
     },
   ];
 
