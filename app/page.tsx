@@ -23,10 +23,8 @@ export default function Portfolio() {
       <header className="relative flex justify-between items-center px-4 py-4 md:px-8 md:py-6 backdrop-blur-sm">
         <div className="flex items-center space-x-2 text-gray-400 text-sm">
           <Mail className="w-4 h-4" />
-          <span className="hidden sm:inline">
-            heyitsrajkumar@gmail.com
-          </span>{" "}
-          {/* Hide email on very small screens */}
+          <span>heyitsrajkumar@gmail.com</span>{" "}
+          {/* Email text is now always visible */}
         </div>
         <nav className="flex items-center space-x-4 text-sm md:space-x-6">
           <Link
