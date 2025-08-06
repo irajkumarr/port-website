@@ -3,11 +3,38 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { ArrowUpRight, Mail, MapPin, Github, Linkedin } from "lucide-react";
+import {
+  ArrowUpRight,
+  Mail,
+  MapPin,
+  Github,
+  Linkedin,
+  Sparkles,
+} from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
+import { useState } from "react";
 
 export default function Portfolio() {
+  const [showResumeDropdown, setShowResumeDropdown] = useState(false);
+
+  // Resume functions
+  const handleResumeView = () => {
+    // Option 1: Open resume in new tab (if you have a PDF file)
+    window.open("./resume.pdf", "_blank");
+    setShowResumeDropdown(false);
+  };
+
+  const handleResumeDownload = () => {
+    // Create download link
+    const link = document.createElement("a");
+    link.href = "./resume.pdf"; // Path to your resume file
+    link.download = "Raj_Kumar_Resume.pdf"; // Downloaded filename
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    setShowResumeDropdown(false);
+  };
   const socialLinks = [
     {
       name: "LinkedIn",
@@ -15,6 +42,40 @@ export default function Portfolio() {
       icon: Linkedin,
     },
     { name: "Github", url: "https://github.com/learnwithraj", icon: Github },
+  ];
+  const projects = [
+    {
+      title: "ServiceOnWheels - Servicing & Maintenance App",
+      duration: "July 9 – July 21, 2025",
+      tech: ["Flutter", "NodeJS", "Express", "MongoDB"],
+      type: "Full Stack App",
+      badgeColor: "blue",
+      url: "",
+    },
+    {
+      title: "Rojgari - Job Seeker Platform",
+      duration: "Jan 15 – Mar 15, 2025",
+      tech: ["Flutter", "NodeJS", "Express", "MongoDB", "JWT"],
+      type: "Full Stack App",
+      badgeColor: "green",
+      url: "",
+    },
+    {
+      title: "Kirana - Grocery Shopping App",
+      duration: "Dec 30, 2024 – Jan 15, 2025",
+      tech: ["Flutter", "NodeJS", "MongoDB", "REST API"],
+      type: "Mobile App",
+      badgeColor: "yellow",
+      url: "https://github.com/learnwithraj/grocery-application",
+    },
+    {
+      title: "Chulesi - Food Delivery App",
+      duration: "Aug 28 – Dec 3, 2024",
+      tech: ["Flutter", "NodeJS", "MongoDB", "Firebase Notifications"],
+      type: "Full Stack App",
+      badgeColor: "red",
+      url: "",
+    },
   ];
 
   return (
@@ -34,12 +95,98 @@ export default function Portfolio() {
             Home
           </Link>
           <span className="text-gray-500">/</span>
-          <Link
+          {/* <Link
             href="#"
             className="text-gray-400 hover:text-blue-400 transition-colors duration-300"
           >
             Resume
-          </Link>
+          </Link> */}
+          {/* Resume Dropdown */}
+          <div className="relative">
+            <button
+              onClick={() => setShowResumeDropdown(!showResumeDropdown)}
+              onMouseEnter={() => setShowResumeDropdown(true)}
+              className="relative text-gray-400 hover:text-blue-400 transition-colors duration-300 flex items-center space-x-1 group cursor-pointer"
+            >
+              <span>Resume</span>
+              <svg
+                className={`w-3 h-3 transition-transform duration-200 ${
+                  showResumeDropdown ? "rotate-180" : ""
+                }`}
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M19 9l-7 7-7-7"
+                />
+              </svg>
+              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-400 to-purple-500 group-hover:w-full transition-all duration-300"></span>
+            </button>
+
+            {/* Dropdown Menu */}
+            {showResumeDropdown && (
+              <div
+                className="absolute right-0 top-full mt-2 w-48 bg-gray-900/95 backdrop-blur-md border border-gray-700/50 rounded-xl shadow-2xl z-[100] animate-in fade-in-0 zoom-in-95 duration-200"
+                onMouseLeave={() => setShowResumeDropdown(false)}
+              >
+                <div className="p-2 space-y-1">
+                  <button
+                    onClick={handleResumeView}
+                    className="w-full text-left px-4 py-3 text-gray-300 hover:text-white hover:bg-blue-500/10 rounded-lg transition-all duration-200 flex items-center space-x-3 group/item"
+                  >
+                    <div className="p-1 rounded-md bg-blue-500/10 group-hover/item:bg-blue-500/20 transition-colors duration-200">
+                      <svg
+                        className="w-4 h-4 text-blue-400"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
+                        />
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
+                        />
+                      </svg>
+                    </div>
+                    <span className="text-sm font-medium">View Resume</span>
+                  </button>
+
+                  <button
+                    onClick={handleResumeDownload}
+                    className="w-full text-left px-4 py-3 text-gray-300 hover:text-white hover:bg-green-500/10 rounded-lg transition-all duration-200 flex items-center space-x-3 group/item"
+                  >
+                    <div className="p-1 rounded-md bg-green-500/10 group-hover/item:bg-green-500/20 transition-colors duration-200">
+                      <svg
+                        className="w-4 h-4 text-green-400"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+                        />
+                      </svg>
+                    </div>
+                    <span className="text-sm font-medium">Download PDF</span>
+                  </button>
+                </div>
+              </div>
+            )}
+          </div>
         </nav>
       </header>
       {/* Main Content */}
@@ -51,9 +198,6 @@ export default function Portfolio() {
               <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
               <span className="text-green-400 text-sm">Available for work</span>
             </div>
-            {/* <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-4 md:mb-6 bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
-              Hi, I'm Raj 👋
-            </h1> */}
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-4 md:mb-6">
               <span className="bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
                 Hi, I'm Raj
@@ -111,9 +255,6 @@ export default function Portfolio() {
                   />
                 </div>
               </div>
-              {/* <div className="absolute -bottom-2 -right-2 bg-green-400 w-7 h-7 sm:w-8 sm:h-8 rounded-full border-4 border-gray-950 flex items-center justify-center">
-                <div className="w-2 h-2 bg-white rounded-full"></div>
-              </div> */}
               <div className="absolute -bottom-2 -right-2 bg-green-400 w-7 h-7 sm:w-8 sm:h-8 rounded-full border-4 border-gray-950 flex items-center justify-center">
                 {/* Animated inner white circle */}
                 <div className="relative flex h-2 w-2">
@@ -125,153 +266,74 @@ export default function Portfolio() {
           </div>
         </section>
 
-        {/* Latest Projects Section */}
         <section className="mb-12 md:mb-20">
-          <div className="flex justify-between items-center mb-6 md:mb-8">
-            <h2 className="text-xl sm:text-2xl font-bold">Latest Projects</h2>
-            {/* You can add a "See all" link if needed */}
+          <div className="flex items-center space-x-3 mb-8">
+            <Sparkles className="w-6 h-6 text-yellow-400" />
+            <h2 className="text-3xl font-bold bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
+              Latest Projects
+            </h2>
           </div>
+
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
-            {/* Servicing & Maintenance App */}
-            <Card className="bg-gray-900/50 border-gray-800 hover:border-gray-700 transition-all duration-300 hover:transform hover:scale-105 backdrop-blur-sm">
-              <CardContent className="p-4 md:p-6">
-                <div className="flex justify-between items-start mb-3 md:mb-4">
-                  <Badge
-                    variant="secondary"
-                    className="bg-blue-500/20 text-blue-400 border-blue-500/30 text-xs md:text-sm"
-                  >
-                    Full Stack App
-                  </Badge>
-                  <span className="text-gray-500 text-xs">
-                    July 9 – July 21, 2025
-                  </span>
-                </div>
-                <h3 className="text-base md:text-lg text-white font-semibold mb-2 md:mb-3">
-                  ServiceOnWheels - Servicing & Maintenance App
-                </h3>
-                <p className="text-gray-400 text-xs md:text-sm mb-3 md:mb-4">
-                  Flutter • NodeJS • Express • MongoDB
-                </p>
-                <Button
-                  variant="ghost"
-                  size="sm"
-                  className="text-blue-400 hover:text-cyan-300 p-0 text-xs md:text-sm cursor-pointer"
-                >
-                  View project{" "}
-                  <ArrowUpRight className="w-3 h-3 md:w-4 md:h-4 ml-1" />
-                </Button>
-              </CardContent>
-            </Card>
-
-            {/* Job Seeker App */}
-            <Card className="bg-gray-900/50 border-gray-800 hover:border-gray-700 transition-all duration-300 hover:transform hover:scale-105 backdrop-blur-sm">
-              <CardContent className="p-4 md:p-6">
-                <div className="flex justify-between items-start mb-3 md:mb-4">
-                  <Badge
-                    variant="secondary"
-                    className="bg-green-500/20 text-green-400 border-green-500/30 text-xs md:text-sm"
-                  >
-                    Full Stack App
-                  </Badge>
-                  <span className="text-gray-500 text-xs">
-                    {" "}
-                    Jan 15 – Mar 15, 2025
-                  </span>
-                </div>
-                <h3 className="text-base md:text-lg text-white font-semibold mb-2 md:mb-3">
-                  Rojgari - Job Seeker Platform
-                </h3>
-                <p className="text-gray-400 text-xs md:text-sm mb-3 md:mb-4">
-                  Flutter • NodeJS • Express • MongoDB • JWT
-                </p>
-                <Button
-                  variant="ghost"
-                  size="sm"
-                  className="text-blue-400 hover:text-cyan-300 p-0 text-xs md:text-sm cursor-pointer"
-                >
-                  View project{" "}
-                  <ArrowUpRight className="w-3 h-3 md:w-4 md:h-4 ml-1" />
-                </Button>
-              </CardContent>
-            </Card>
-
-            {/* Grocery App */}
-            <Card className="bg-gray-900/50 border-gray-800 hover:border-gray-700 transition-all duration-300 hover:transform hover:scale-105 backdrop-blur-sm">
-              <CardContent className="p-4 md:p-6">
-                <div className="flex justify-between items-start mb-3 md:mb-4">
-                  <Badge
-                    variant="secondary"
-                    className="bg-yellow-500/20 text-yellow-400 border-yellow-500/30 text-xs md:text-sm"
-                  >
-                    Mobile App
-                  </Badge>
-                  <span className="text-gray-500 text-xs">
-                    {" "}
-                    Dec 30, 2024 – Jan 15, 2025
-                  </span>
-                </div>
-                <h3 className="text-base md:text-lg text-white font-semibold mb-2 md:mb-3">
-                  Kirana - Grocery Shopping App
-                </h3>
-                <p className="text-gray-400 text-xs md:text-sm mb-3 md:mb-4">
-                  Flutter • NodeJS • MongoDB • REST API
-                </p>
-                {/* <Button
-                  variant="ghost"
-                  size="sm"
-                  className="text-blue-400 hover:text-blue-300 p-0 text-xs md:text-sm"
-                >
-                  View project{" "}
-                  <ArrowUpRight className="w-3 h-3 md:w-4 md:h-4 ml-1" />
-                </Button> */}
-                <Link
-                  href="https://github.com/learnwithraj/grocery-application"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <Button
-                    variant="ghost"
-                    size="sm"
-                    className="text-blue-400 hover:text-cyan-300 p-0 text-xs md:text-sm cursor-pointer"
-                  >
-                    View project{" "}
-                    <ArrowUpRight className="w-3 h-3 md:w-4 md:h-4 ml-1" />
-                  </Button>
-                </Link>
-              </CardContent>
-            </Card>
-
-            {/* Food Delivery App */}
-            <Card className="bg-gray-900/50 border-gray-800 hover:border-gray-700 transition-all duration-300 hover:transform hover:scale-105 backdrop-blur-sm">
-              <CardContent className="p-4 md:p-6">
-                <div className="flex justify-between items-start mb-3 md:mb-4">
-                  <Badge
-                    variant="secondary"
-                    className="bg-red-500/20 text-red-400 border-red-500/30 text-xs md:text-sm"
-                  >
-                    Full Stack App
-                  </Badge>
-                  <span className="text-gray-500 text-xs">
-                    {" "}
-                    Aug 28 – Dec 3, 2024
-                  </span>
-                </div>
-                <h3 className="text-base md:text-lg text-white font-semibold mb-2 md:mb-3">
-                  Chulesi - Food Delivery App
-                </h3>
-                <p className="text-gray-400 text-xs md:text-sm mb-3 md:mb-4">
-                  Flutter • NodeJS • MongoDB • Firebase Notifications
-                </p>
-                <Button
-                  variant="ghost"
-                  size="sm"
-                  className="text-blue-400 hover:text-cyan-300 p-0 text-xs md:text-sm cursor-pointer"
-                >
-                  View project{" "}
-                  <ArrowUpRight className="w-3 h-3 md:w-4 md:h-4 ml-1" />
-                </Button>
-              </CardContent>
-            </Card>
+            {projects.map((project, index) => (
+              <Card
+                key={index}
+                className="bg-gray-900/50 border-gray-800 hover:border-gray-700 transition-all duration-300 hover:transform hover:scale-105 backdrop-blur-sm"
+              >
+                <CardContent className="p-4 md:p-6">
+                  <div className="flex justify-between items-start mb-3 md:mb-4">
+                    <Badge
+                      variant="secondary"
+                      className={`text-xs md:text-sm ${
+                        project.badgeColor === "blue"
+                          ? "bg-blue-500/20 text-blue-400 border-blue-500/30"
+                          : project.badgeColor === "green"
+                          ? "bg-green-500/20 text-green-400 border-green-500/30"
+                          : project.badgeColor === "yellow"
+                          ? "bg-yellow-500/20 text-yellow-400 border-yellow-500/30"
+                          : "bg-red-500/20 text-red-400 border-red-500/30"
+                      }`}
+                    >
+                      {project.type}
+                    </Badge>
+                    <span className="text-gray-500 text-xs">
+                      {project.duration}
+                    </span>
+                  </div>
+                  <h3 className="text-base md:text-lg text-white font-semibold mb-2 md:mb-3">
+                    {project.title}
+                  </h3>
+                  <p className="text-gray-400 text-xs md:text-sm mb-3 md:mb-4">
+                    {project.tech.join(" • ")}
+                  </p>
+                  {project.url ? (
+                    <Link
+                      href={project.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <Button
+                        variant="ghost"
+                        size="sm"
+                        className="text-blue-400 hover:text-cyan-300 p-0 text-xs md:text-sm cursor-pointer"
+                      >
+                        View project{" "}
+                        <ArrowUpRight className="w-3 h-3 md:w-4 md:h-4 ml-1" />
+                      </Button>
+                    </Link>
+                  ) : (
+                    <Button
+                      variant="ghost"
+                      size="sm"
+                      className="text-blue-400 hover:text-cyan-300 p-0 text-xs md:text-sm cursor-pointer"
+                    >
+                      View project{" "}
+                      <ArrowUpRight className="w-3 h-3 md:w-4 md:h-4 ml-1" />
+                    </Button>
+                  )}
+                </CardContent>
+              </Card>
+            ))}
           </div>
         </section>
 
