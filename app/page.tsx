@@ -104,10 +104,11 @@ export default function Portfolio() {
               <div className="w-64 h-64 sm:w-72 sm:h-72 rounded-full overflow-hidden border-4 border-gradient-to-r from-blue-400 to-purple-500 p-1 bg-gradient-to-r from-blue-400 to-purple-500">
                 <div className="w-full h-full rounded-full overflow-hidden bg-gray-900">
                   <Image
-                    src="/user.png?height=288&width=288"
+                    src="/user.png"
                     alt="Raj Profile"
                     width={288}
                     height={288}
+                    unoptimized
                     className="w-full h-full object-cover"
                   />
                 </div>
