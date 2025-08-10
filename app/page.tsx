@@ -38,10 +38,10 @@ export default function Portfolio() {
   const socialLinks = [
     {
       name: "LinkedIn",
-      url: "https://www.linkedin.com/in/raj-kumar-timalsina/",
+      url: "https://www.linkedin.com/in/irajkumarr",
       icon: Linkedin,
     },
-    { name: "Github", url: "https://github.com/learnwithraj", icon: Github },
+    { name: "Github", url: "https://github.com/irajkumarr", icon: Github },
   ];
   const projects = [
     {
@@ -50,7 +50,7 @@ export default function Portfolio() {
       tech: ["Flutter", "NodeJS", "Express", "MongoDB"],
       type: "Full Stack App",
       badgeColor: "blue",
-      url: "https://github.com/learnwithraj/servicing_maintenance_app",
+      url: "https://github.com/irajkumarr/servicing_maintenance_app",
     },
     {
       title: "Rojgari - Job Seeker Platform",
@@ -58,7 +58,7 @@ export default function Portfolio() {
       tech: ["Flutter", "NodeJS", "Express", "MongoDB", "JWT"],
       type: "Full Stack App",
       badgeColor: "green",
-      url: "https://github.com/learnwithraj/job-seeker-application",
+      url: "https://github.com/irajkumarr/job-seeker-application",
     },
     {
       title: "Kirana - Grocery Shopping App",
@@ -66,7 +66,7 @@ export default function Portfolio() {
       tech: ["Flutter", "NodeJS", "MongoDB", "REST API"],
       type: "Mobile App",
       badgeColor: "yellow",
-      url: "https://github.com/learnwithraj/grocery-application",
+      url: "https://github.com/irajkumarr/grocery-application",
     },
     {
       title: "Chulesi - Food Delivery App",
@@ -74,7 +74,7 @@ export default function Portfolio() {
       tech: ["Flutter", "NodeJS", "MongoDB", "Firebase Notifications"],
       type: "Full Stack App",
       badgeColor: "red",
-      url: "https://github.com/learnwithraj/chulesi-foodDelivery-app-frontend",
+      url: "https://github.com/irajkumarr/chulesi-foodDelivery-app-frontend",
     },
   ];
 
@@ -84,7 +84,7 @@ export default function Portfolio() {
       <header className="relative flex justify-between items-center px-4 py-4 md:px-8 md:py-6 backdrop-blur-sm">
         <div className="flex items-center space-x-2 text-gray-400 text-sm">
           <Mail className="w-4 h-4" />
-          <span>heyitsrajkumar@gmail.com</span>{" "}
+          <span>rajk.timalsina05@gmail.com</span>{" "}
           {/* Email text is now always visible */}
         </div>
         <nav className="flex items-center space-x-4 text-sm md:space-x-6">
@@ -346,17 +346,17 @@ export default function Portfolio() {
             <p className="text-gray-300 text-sm md:text-base mb-6 md:mb-8 max-w-2xl mx-auto">
               Email me at{" "}
               <Link
-                href="mailto:heyitsrajkumar@gmail.com"
+                href="mailto:rajk.timalsina05@gmail.com"
                 className="text-blue-400 hover:text-blue-300"
               >
-                heyitsrajkumar@gmail.com
+                rajk.timalsina05@gmail.com
               </Link>{" "}
               or follow me via my social links.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center mb-6 md:mb-8">
               {/* Email Button */}
-              <a href="mailto:heyitsrajkumar@gmail.com">
+              <a href="mailto:rajk.timalsina05@gmail.com">
                 <Button
                   size="lg"
                   className="bg-blue-600 hover:bg-blue-700 text-sm md:text-base cursor-pointer"
