@@ -101,12 +101,23 @@ export default function Portfolio() {
           >
             Resume
           </Link> */}
-          {/* Resume Dropdown */}
+          {/* Resume - Dropdown on desktop, direct download on mobile */}
           <div className="relative">
+            {/* Mobile and Tablet: Direct download link */}
+            <a
+              href="./resume.pdf"
+              download="Raj_Kumar_Resume.pdf"
+              className="lg:hidden relative text-gray-400 hover:text-blue-400 transition-colors duration-300 flex items-center space-x-1 group cursor-pointer"
+            >
+              <span>Resume</span>
+              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-400 to-purple-500 group-hover:w-full transition-all duration-300"></span>
+            </a>
+
+            {/* Desktop: Dropdown button */}
             <button
               onClick={() => setShowResumeDropdown(!showResumeDropdown)}
               onMouseEnter={() => setShowResumeDropdown(true)}
-              className="relative text-gray-400 hover:text-blue-400 transition-colors duration-300 flex items-center space-x-1 group cursor-pointer"
+              className="hidden lg:flex relative text-gray-400 hover:text-blue-400 transition-colors duration-300 items-center space-x-1 group cursor-pointer"
             >
               <span>Resume</span>
               <svg
@@ -127,62 +138,65 @@ export default function Portfolio() {
               <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-400 to-purple-500 group-hover:w-full transition-all duration-300"></span>
             </button>
 
-            {/* Dropdown Menu */}
+            {/* Desktop: Dropdown Menu */}
             {showResumeDropdown && (
               <div
-                className="absolute right-0 top-full mt-2 w-48 bg-gray-900/95 backdrop-blur-md border border-gray-700/50 rounded-xl shadow-2xl z-[100] animate-in fade-in-0 zoom-in-95 duration-200"
+                className="hidden lg:block absolute right-0 top-full pt-2 w-48 z-[99999]"
+                onMouseEnter={() => setShowResumeDropdown(true)}
                 onMouseLeave={() => setShowResumeDropdown(false)}
               >
-                <div className="p-2 space-y-1">
-                  <button
-                    onClick={handleResumeView}
-                    className="w-full text-left px-4 py-3 text-gray-300 hover:text-white hover:bg-blue-500/10 rounded-lg transition-all duration-200 flex items-center space-x-3 group/item"
-                  >
-                    <div className="p-1 rounded-md bg-blue-500/10 group-hover/item:bg-blue-500/20 transition-colors duration-200">
-                      <svg
-                        className="w-4 h-4 text-blue-400"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
-                        />
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
-                        />
-                      </svg>
-                    </div>
-                    <span className="text-sm font-medium">View Resume</span>
-                  </button>
+                <div className="bg-gray-900/95 backdrop-blur-md border border-gray-700/50 rounded-xl shadow-2xl animate-in fade-in-0 zoom-in-95 duration-200">
+                  <div className="p-2 space-y-1">
+                    <button
+                      onClick={handleResumeView}
+                      className="w-full text-left px-4 py-3 text-gray-300 hover:text-white hover:bg-blue-500/10 rounded-lg transition-all duration-200 flex items-center space-x-3 group/item"
+                    >
+                      <div className="p-1 rounded-md bg-blue-500/10 group-hover/item:bg-blue-500/20 transition-colors duration-200">
+                        <svg
+                          className="w-4 h-4 text-blue-400"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
+                          />
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
+                          />
+                        </svg>
+                      </div>
+                      <span className="text-sm font-medium">View Resume</span>
+                    </button>
 
-                  <button
-                    onClick={handleResumeDownload}
-                    className="w-full text-left px-4 py-3 text-gray-300 hover:text-white hover:bg-green-500/10 rounded-lg transition-all duration-200 flex items-center space-x-3 group/item"
-                  >
-                    <div className="p-1 rounded-md bg-green-500/10 group-hover/item:bg-green-500/20 transition-colors duration-200">
-                      <svg
-                        className="w-4 h-4 text-green-400"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
-                        />
-                      </svg>
-                    </div>
-                    <span className="text-sm font-medium">Download PDF</span>
-                  </button>
+                    <button
+                      onClick={handleResumeDownload}
+                      className="w-full text-left px-4 py-3 text-gray-300 hover:text-white hover:bg-green-500/10 rounded-lg transition-all duration-200 flex items-center space-x-3 group/item"
+                    >
+                      <div className="p-1 rounded-md bg-green-500/10 group-hover/item:bg-green-500/20 transition-colors duration-200">
+                        <svg
+                          className="w-4 h-4 text-green-400"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+                          />
+                        </svg>
+                      </div>
+                      <span className="text-sm font-medium">Download PDF</span>
+                    </button>
+                  </div>
                 </div>
               </div>
             )}
@@ -190,7 +204,7 @@ export default function Portfolio() {
         </nav>
       </header>
       {/* Main Content */}
-      <main className="relative px-4 py-8 md:px-8 md:py-12 max-w-7xl mx-auto">
+      <main className="relative px-4 py-8 md:px-8 md:py-12 max-w-7xl mx-auto z-[0]">
         {/* Hero Section */}
         <section className="flex flex-col lg:flex-row items-start justify-between mb-12 md:mb-20">
           <div className="lg:w-2/3 mb-8 lg:mb-0">
