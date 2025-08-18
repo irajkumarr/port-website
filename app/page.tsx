@@ -274,14 +274,14 @@ export default function Portfolio() {
           <div className="lg:w-1/3 flex justify-center lg:justify-end w-full lg:w-auto mt-8 lg:mt-0">
             <div className="relative">
               <div className="w-64 h-64 sm:w-72 sm:h-72 rounded-full overflow-hidden border-4 border-gradient-to-r from-blue-400 to-purple-500 p-1 bg-gradient-to-r from-blue-400 to-purple-500">
-                <div className="w-full h-full rounded-full overflow-hidden bg-gray-900">
+                <div className="w-full h-full rounded-full overflow-hidden bg-gray-900 flex items-center justify-center">
                   <Image
                     src="./user.png"
                     alt="Raj Profile"
                     width={288}
                     height={288}
                     unoptimized
-                    className="w-full h-full object-cover"
+                    className="w-[94%] h-[94%] object-cover rounded-full"
                   />
                 </div>
               </div>
