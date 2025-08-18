@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     siteName: "Raj Kumar Timalsina Portfolio",
     images: [
       {
-        url: "/user.png",
+        url: "/user-image.png",
         width: 1200,
         height: 630,
         alt: "Raj Kumar Timalsina Portfolio",
@@ -48,8 +48,8 @@ export const metadata: Metadata = {
     title: "Raj Kumar Timalsina | Full Stack Mobile Developer",
     description:
       "Portfolio of Raj Kumar Timalsina, crafting robust backends and beautiful mobile applications.",
-    images: ["/user.png"],
-    // creator: '@your_twitter_handle', // Optional
+    images: ["/user-image.png"],
+    creator: "@irajkumarr_", // Optional
   },
 
   icons: {
