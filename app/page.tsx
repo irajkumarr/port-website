@@ -61,6 +61,22 @@ export default function Portfolio() {
   ];
   const projects = [
     {
+      title: "Learnify - E-learning App",
+      duration: "Aug 2 – Aug 26, 2025",
+      tech: ["Flutter", "NodeJS", "Express", "MongoDB"],
+      type: "Full Stack App",
+      badgeColor: "green",
+      url: "https://github.com/irajkumarr/Learnify-ELearning-App",
+    },
+    {
+      title: "HostelMate – Hostel Management System",
+      duration: "June 16 – Aug 18, 2025",
+      tech: ["Flutter", "NodeJS", "Express", "MongoDB"],
+      type: "Full Stack App",
+      badgeColor: "amber",
+      url: "https://github.com/irajkumarr/hostel_management_app",
+    },
+    {
       title: "ServiceOnWheels - Servicing & Maintenance App",
       duration: "July 9 – July 21, 2025",
       tech: ["Flutter", "NodeJS", "Express", "MongoDB"],
