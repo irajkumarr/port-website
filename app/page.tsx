@@ -69,20 +69,20 @@ export default function Portfolio() {
       url: "https://github.com/irajkumarr/Learnify-ELearning-App",
     },
     {
-      title: "HostelMate – Hostel Management System",
-      duration: "June 16 – Aug 18, 2025",
-      tech: ["Flutter", "NodeJS", "Express", "MongoDB"],
-      type: "Full Stack App",
-      badgeColor: "amber",
-      url: "https://github.com/irajkumarr/hostel_management_app",
-    },
-    {
       title: "ServiceOnWheels - Servicing & Maintenance App",
       duration: "July 9 – July 21, 2025",
       tech: ["Flutter", "NodeJS", "Express", "MongoDB"],
       type: "Full Stack App",
       badgeColor: "blue",
       url: "https://github.com/irajkumarr/servicing_maintenance_app",
+    },
+    {
+      title: "HostelMate – Hostel Management System",
+      duration: "June 16 – June 27, 2025",
+      tech: ["Flutter", "NodeJS", "Express", "MongoDB"],
+      type: "Full Stack App",
+      badgeColor: "amber",
+      url: "https://github.com/irajkumarr/hostel_management_app",
     },
     {
       title: "Rojgari - Job Seeker Platform",
