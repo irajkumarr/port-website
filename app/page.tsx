@@ -250,19 +250,17 @@ export default function Portfolio() {
               </span>
               <span className="ml-2">👋</span>
             </h1>
-
             <p className="text-base sm:text-lg md:text-xl leading-relaxed mb-6 md:mb-8 max-w-2xl">
               Passionate{" "}
               <span className="text-orange-400 font-semibold">
                 Full Stack Mobile Developer
-              </span>
-              , I've been learning and building for{" "}
-              <span className="text-orange-400 font-semibold">2 years</span>. I
-              focus on crafting robust backends and beautiful mobile
-              applications, specializing in{" "}
-              <span className="text-blue-400 font-semibold">Flutter</span>{" "}
-              {/* <span className="text-blue-400 font-semibold">TypeScript</span>, */}
-              and <span className="text-green-400 font-semibold">NodeJS</span>.
+              </span>{" "}
+              specializing in{" "}
+              <span className="text-blue-400 font-semibold">Flutter</span> and{" "}
+              <span className="text-green-400 font-semibold">NodeJS</span>,
+              focused on building scalable backend systems and responsive
+              cross-platform mobile applications with clean architecture and
+              modern development practices.
             </p>
             <div className="flex items-center space-x-4 mb-6 md:mb-8">
               <div className="flex items-center space-x-2 text-gray-400 text-sm">
@@ -334,10 +332,10 @@ export default function Portfolio() {
                         project.badgeColor === "blue"
                           ? "bg-blue-500/20 text-blue-400 border-blue-500/30"
                           : project.badgeColor === "green"
-                          ? "bg-green-500/20 text-green-400 border-green-500/30"
-                          : project.badgeColor === "yellow"
-                          ? "bg-yellow-500/20 text-yellow-400 border-yellow-500/30"
-                          : "bg-red-500/20 text-red-400 border-red-500/30"
+                            ? "bg-green-500/20 text-green-400 border-green-500/30"
+                            : project.badgeColor === "yellow"
+                              ? "bg-yellow-500/20 text-yellow-400 border-yellow-500/30"
+                              : "bg-red-500/20 text-red-400 border-red-500/30"
                       }`}
                     >
                       {project.type}
