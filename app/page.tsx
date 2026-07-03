@@ -111,7 +111,7 @@ export default function Portfolio() {
   ];
 
   return (
-    <div className="min-h-screen bg-gray-950 text-white">
+    <div className="min-h-screen bg-gray-950 text-white ambient-glow-bg">
       {/* Header */}
       <header className="relative flex justify-between items-center px-4 py-4 md:px-8 md:py-6 backdrop-blur-sm">
         <div className="flex items-center space-x-2 text-gray-400 text-sm">
@@ -286,8 +286,8 @@ export default function Portfolio() {
           </div>
 
           <div className="lg:w-1/3 flex justify-center lg:justify-end w-full lg:w-auto mt-8 lg:mt-0">
-            <div className="relative">
-              <div className="w-64 h-64 sm:w-72 sm:h-72 rounded-full overflow-hidden border-4 border-gradient-to-r from-blue-400 to-purple-500 p-1 bg-gradient-to-r from-blue-400 to-purple-500">
+            <div className="relative group/avatar cursor-pointer">
+              <div className="w-64 h-64 sm:w-72 sm:h-72 rounded-full overflow-hidden p-1 bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 transition-transform duration-500 group-hover/avatar:scale-105 shadow-xl shadow-purple-500/10">
                 <div className="w-full h-full rounded-full overflow-hidden bg-gray-900 flex items-center justify-center">
                   <Image
                     src="./user-image.png"
@@ -322,9 +322,10 @@ export default function Portfolio() {
             {projects.map((project, index) => (
               <Card
                 key={index}
-                className="bg-gray-900/50 border-gray-800 hover:border-gray-700 transition-all duration-300 hover:transform hover:scale-105 backdrop-blur-sm"
+                className="bg-gray-900/40 border-gray-800/80 hover:border-blue-500/40 transition-all duration-300 hover:transform hover:scale-105 backdrop-blur-sm relative overflow-hidden group"
               >
-                <CardContent className="p-4 md:p-6">
+                <div className="absolute inset-0 bg-gradient-to-br from-blue-500/0 via-purple-500/0 to-pink-500/0 opacity-0 group-hover:opacity-[0.02] transition-opacity duration-300 pointer-events-none" />
+                <CardContent className="p-4 md:p-6 relative z-10">
                   <div className="flex justify-between items-start mb-3 md:mb-4">
                     <Badge
                       variant="secondary"
