@@ -114,11 +114,14 @@ export default function Portfolio() {
     <div className="min-h-screen bg-gray-950 text-white ambient-glow-bg">
       {/* Header */}
       <header className="relative flex justify-between items-center px-4 py-4 md:px-8 md:py-6 backdrop-blur-sm">
-        <div className="flex items-center space-x-2 text-gray-400 text-sm">
+        <Link
+          href="mailto:rajk.timalsina05@gmail.com"
+          className="flex items-center space-x-2 text-gray-400 hover:text-blue-400 text-sm transition-colors duration-300"
+        >
           <Mail className="w-4 h-4" />
           <span>rajk.timalsina05@gmail.com</span>{" "}
           {/* Email text is now always visible */}
-        </div>
+        </Link>
         <nav className="flex items-center space-x-4 text-sm md:space-x-6">
           <Link
             href="#"
@@ -276,7 +279,7 @@ export default function Portfolio() {
                   key={social.name}
                   href={social.url}
                   target="_blank"
-                  className="flex items-center space-x-2 px-3 py-1.5 text-sm bg-gray-800/50 rounded-lg hover:bg-gray-700/50 transition-all duration-300 hover:scale-105"
+                  className="flex items-center space-x-2 px-3 py-1.5 text-sm bg-gray-900/60 border border-gray-800/80 rounded-lg hover:bg-blue-500/10 hover:border-blue-500/30 text-gray-300 hover:text-white transition-all duration-300 hover:scale-105"
                 >
                   <social.icon className="w-4 h-4" />
                   <span>{social.name}</span>
@@ -384,7 +387,7 @@ export default function Portfolio() {
 
         {/* Contact Section */}
         <section className="text-center">
-          <div className="bg-gradient-to-r from-gray-900/50 to-gray-800/50 rounded-2xl p-8 md:p-12 backdrop-blur-sm border border-gray-800">
+          <div className="bg-gradient-to-br from-gray-900/40 to-neutral-900/40 rounded-2xl p-8 md:p-12 backdrop-blur-sm border border-gray-800/80 hover:border-blue-500/20 transition-all duration-500">
             <h2 className="text-2xl sm:text-3xl font-bold mb-4">
               Interested in working together?
             </h2>
