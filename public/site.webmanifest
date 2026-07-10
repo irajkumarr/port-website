@@ -1,19 +1,21 @@
 {
-    "name": "",
-    "short_name": "",
-    "icons": [
-       {
-          "src": "/android-chrome-192x192.png",
-          "sizes": "192x192",
-          "type": "image/png"
-       },
-       {
-        "src": "/android-chrome-512x512.png",
-        "sizes": "512x512",
+  "name": "Raj Kumar Timalsina - Flutter & Full Stack Mobile Developer Portfolio",
+  "short_name": "Raj Timalsina",
+  "description": "Portfolio of Raj Kumar Timalsina, a Full Stack Mobile Developer & Flutter Developer in Nepal building scalable backends and beautiful mobile apps.",
+  "start_url": "/",
+  "icons": [
+     {
+        "src": "/android-chrome-192x192.png",
+        "sizes": "192x192",
         "type": "image/png"
-        }
-    ],
-    "theme_color": "#FFFFFF",
-    "background_color": "#FFFFFF",
-    "display": "standalone"
- }
+     },
+     {
+       "src": "/android-chrome-512x512.png",
+       "sizes": "512x512",
+       "type": "image/png"
+     }
+  ],
+  "theme_color": "#030712",
+  "background_color": "#030712",
+  "display": "standalone"
+}
