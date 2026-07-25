@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { GeistSans } from "geist/font/sans";
 import { GeistMono } from "geist/font/mono";
 import "./../app/globals.css";
+import CustomCursor from "../components/custom-cursor";
 
 export const metadata: Metadata = {
   title: "Raj Kumar Timalsina | Full Stack Mobile & Flutter Developer Nepal",
@@ -160,7 +161,10 @@ html {
 }
         `}</style>
       </head>
-      <body>{children}</body>
+      <body>
+        <CustomCursor />
+        {children}
+      </body>
     </html>
   );
 }

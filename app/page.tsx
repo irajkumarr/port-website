@@ -281,12 +281,7 @@ export default function Portfolio() {
               cross-platform mobile applications with clean architecture and
               modern development practices.
             </p>
-            <div className="flex items-center space-x-4 mb-6 md:mb-8">
-              <div className="flex items-center space-x-2 text-gray-400 text-sm">
-                <MapPin className="w-4 h-4" aria-hidden="true" />
-                <span>Hetauda, Nepal</span>
-              </div>
-            </div>
+
             <div className="flex flex-wrap gap-3">
               {socialLinks.map((social) => (
                 <Link
@@ -481,3 +476,10 @@ export default function Portfolio() {
     </div>
   );
 }
+
+/* <div className="flex items-center space-x-4 mb-6 md:mb-8">
+              <div className="flex items-center space-x-2 text-gray-400 text-sm">
+                <MapPin className="w-4 h-4" aria-hidden="true" />
+                <span>Hetauda, Nepal</span>
+              </div>
+            </div> */
