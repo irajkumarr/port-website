@@ -5,7 +5,7 @@ export const dynamic = "force-static";
 export default function sitemap(): MetadataRoute.Sitemap {
   return [
     {
-      url: "https://timalsinarajkumar.com.np",
+      url: "https://www.timalsinarajkumar.com.np",
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 1.0,

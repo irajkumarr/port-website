@@ -8,6 +8,6 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: "*",
       allow: "/",
     },
-    sitemap: "https://timalsinarajkumar.com.np/sitemap.xml",
+    sitemap: "https://www.timalsinarajkumar.com.np/sitemap.xml",
   };
 }

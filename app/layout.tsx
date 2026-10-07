@@ -29,11 +29,14 @@ export const metadata: Metadata = {
     "App Developer",
   ],
   authors: [
-    { name: "Raj Kumar Timalsina", url: "https://timalsinarajkumar.com.np" },
+    {
+      name: "Raj Kumar Timalsina",
+      url: "https://www.timalsinarajkumar.com.np",
+    },
   ],
   creator: "Raj Kumar Timalsina",
   publisher: "Raj Kumar Timalsina",
-  metadataBase: new URL("https://timalsinarajkumar.com.np"),
+  metadataBase: new URL("https://www.timalsinarajkumar.com.np"),
   alternates: {
     canonical: "/",
   },
@@ -53,7 +56,7 @@ export const metadata: Metadata = {
     title: "Raj Kumar Timalsina | Full Stack Mobile & Flutter Developer Nepal",
     description:
       "Explore the portfolio of Raj Kumar Timalsina, a Full Stack Mobile Developer building scalable backends and beautiful mobile apps.",
-    url: "https://timalsinarajkumar.com.np",
+    url: "https://www.timalsinarajkumar.com.np",
     siteName: "Raj Kumar Timalsina Portfolio",
     images: [
       {
@@ -79,7 +82,7 @@ export const metadata: Metadata = {
   icons: {
     icon: [
       { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
-      { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" }
+      { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
     ],
     shortcut: "/favicon.ico",
     apple: "/apple-touch-icon.png",
@@ -96,29 +99,30 @@ export default function RootLayout({
     "@graph": [
       {
         "@type": "Person",
-        "@id": "https://timalsinarajkumar.com.np/#person",
-        "name": "Raj Kumar Timalsina",
-        "alternateName": "Raj Timalsina",
-        "jobTitle": "Full Stack Mobile Developer & Flutter Developer",
-        "url": "https://timalsinarajkumar.com.np",
-        "image": "https://timalsinarajkumar.com.np/user-image.png",
-        "address": {
+        "@id": "https://www.timalsinarajkumar.com.np/#person",
+        name: "Raj Kumar Timalsina",
+        alternateName: "Raj K Timalsina",
+        jobTitle: "Full Stack Mobile Developer & Flutter Developer",
+        url: "https://www.timalsinarajkumar.com.np",
+        image: "https://www.timalsinarajkumar.com.np/user-image.png",
+        address: {
           "@type": "PostalAddress",
-          "addressLocality": "Hetauda",
-          "addressRegion": "Bagmati",
-          "addressCountry": "NP"
+          addressLocality: "Hetauda",
+          addressRegion: "Bagmati",
+          addressCountry: "NP",
         },
-        "nationality": {
+        nationality: {
           "@type": "Country",
-          "name": "Nepal"
+          name: "Nepal",
         },
-        "sameAs": [
+        sameAs: [
           "https://github.com/irajkumarr",
           "https://www.linkedin.com/in/irajkumarr",
-          "https://x.com/irajkumarr_"
+          "https://x.com/irajkumarr_",
         ],
-        "description": "Professional Flutter Developer and Full Stack Mobile Developer from Nepal. Expert in building mobile apps with Flutter, Dart, Node.js, Express, MongoDB, and Firebase.",
-        "knowsAbout": [
+        description:
+          "Professional Flutter Developer and Full Stack Mobile Developer from Nepal. Expert in building mobile apps with Flutter, Dart, Node.js, Express, MongoDB, and Firebase.",
+        knowsAbout: [
           "Flutter",
           "Dart",
           "Node.js",
@@ -130,19 +134,19 @@ export default function RootLayout({
           "Git",
           "GitHub",
           "Mobile App Development",
-          "Full Stack Development"
-        ]
+          "Full Stack Development",
+        ],
       },
       {
         "@type": "WebSite",
-        "@id": "https://timalsinarajkumar.com.np/#website",
-        "url": "https://timalsinarajkumar.com.np",
-        "name": "Raj Kumar Timalsina | Flutter & Full Stack Mobile Developer Portfolio",
-        "publisher": {
-          "@id": "https://timalsinarajkumar.com.np/#person"
-        }
-      }
-    ]
+        "@id": "https://www.timalsinarajkumar.com.np/#website",
+        url: "https://www.timalsinarajkumar.com.np",
+        name: "Raj Kumar Timalsina | Flutter & Full Stack Mobile Developer Portfolio",
+        publisher: {
+          "@id": "https://www.timalsinarajkumar.com.np/#person",
+        },
+      },
+    ],
   };
 
   return (
@@ -168,4 +172,3 @@ html {
     </html>
   );
 }
-
