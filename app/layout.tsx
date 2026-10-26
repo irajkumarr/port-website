@@ -1,42 +1,48 @@
 import type { Metadata } from "next";
-import { GeistSans } from "geist/font/sans";
-import { GeistMono } from "geist/font/mono";
-import "./../app/globals.css";
-import CustomCursor from "../components/custom-cursor";
+import { Inter, JetBrains_Mono } from "next/font/google";
+import { ThemeProvider } from "../components/theme-provider";
+import "./globals.css";
+
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-sans",
+  display: "swap",
+});
+
+const jetbrainsMono = JetBrains_Mono({
+  subsets: ["latin"],
+  variable: "--font-mono",
+  display: "swap",
+});
 
 export const metadata: Metadata = {
-  title: "Raj Kumar Timalsina | Full Stack Mobile & Flutter Developer Nepal",
+  title: "Raj Kumar Timalsina | Full-Stack & Flutter Developer",
   description:
-    "Portfolio of Raj Kumar Timalsina, a professional Full Stack Mobile Developer and Flutter Developer in Nepal. Crafting robust backends with Node.js and beautiful cross-platform mobile experiences.",
+    "Full-Stack & Flutter Developer with hands-on experience building production-grade mobile applications and robust backend services. Strong background in Clean Architecture, BLoC, Riverpod, Spring Boot, Node.js, WebSockets, and Redis.",
   keywords: [
     "Raj Kumar Timalsina",
-    "Raj Timalsina",
-    "Raj Kumar Flutter Developer",
-    "Raj Kumar Full Stack Mobile Developer",
+    "Raj K Timalsina",
     "Flutter Developer Nepal",
-    "Full Stack Mobile Developer Nepal",
-    "Flutter Developer Portfolio",
-    "Node.js Flutter Developer",
-    "Mobile App Developer Nepal",
-    "Hetauda",
-    "Full Stack Developer",
-    "Mobile Developer",
-    "Flutter",
+    "Full-Stack Developer",
+    "Mobile App Developer",
+    "Clean Architecture Flutter",
+    "Dart",
     "Node.js",
-    "Portfolio",
-    "Backend Developer",
-    "Frontend Developer",
-    "App Developer",
+    "Spring Boot",
+    "Redis",
+    "MongoDB",
+    "BLoC",
+    "Riverpod",
   ],
   authors: [
     {
       name: "Raj Kumar Timalsina",
-      url: "https://www.timalsinarajkumar.com.np",
+      url: "https://timalsinarajkumar.com.np",
     },
   ],
   creator: "Raj Kumar Timalsina",
   publisher: "Raj Kumar Timalsina",
-  metadataBase: new URL("https://www.timalsinarajkumar.com.np"),
+  metadataBase: new URL("https://timalsinarajkumar.com.np"),
   alternates: {
     canonical: "/",
   },
@@ -53,17 +59,17 @@ export const metadata: Metadata = {
   },
 
   openGraph: {
-    title: "Raj Kumar Timalsina | Full Stack Mobile & Flutter Developer Nepal",
+    title: "Raj Kumar Timalsina | Full-Stack & Flutter Developer",
     description:
-      "Explore the portfolio of Raj Kumar Timalsina, a Full Stack Mobile Developer building scalable backends and beautiful mobile apps.",
-    url: "https://www.timalsinarajkumar.com.np",
+      "Full-Stack & Flutter Developer with hands-on experience building production-grade mobile applications and robust backend services.",
+    url: "https://timalsinarajkumar.com.np",
     siteName: "Raj Kumar Timalsina Portfolio",
     images: [
       {
         url: "/og-image.jpeg",
         width: 1200,
         height: 630,
-        alt: "Raj Kumar Timalsina | Full Stack Mobile & Flutter Developer Portfolio",
+        alt: "Raj Kumar Timalsina | Full Stack & Flutter Developer Portfolio",
       },
     ],
     locale: "en_US",
@@ -72,7 +78,7 @@ export const metadata: Metadata = {
 
   twitter: {
     card: "summary_large_image",
-    title: "Raj Kumar Timalsina | Full Stack Mobile & Flutter Developer Nepal",
+    title: "Raj Kumar Timalsina | Full-Stack & Flutter Developer",
     description:
       "Portfolio of Raj Kumar Timalsina, crafting robust backends and beautiful mobile applications.",
     images: ["/og-image.jpeg"],
@@ -99,15 +105,15 @@ export default function RootLayout({
     "@graph": [
       {
         "@type": "Person",
-        "@id": "https://www.timalsinarajkumar.com.np/#person",
+        "@id": "https://timalsinarajkumar.com.np/#person",
         name: "Raj Kumar Timalsina",
         alternateName: "Raj K Timalsina",
-        jobTitle: "Full Stack Mobile Developer & Flutter Developer",
-        url: "https://www.timalsinarajkumar.com.np",
-        image: "https://www.timalsinarajkumar.com.np/avatar-opt.webp",
+        jobTitle: "Full-Stack & Flutter Developer",
+        url: "https://timalsinarajkumar.com.np",
+        image: "https://timalsinarajkumar.com.np/avatar-opt.webp",
         address: {
           "@type": "PostalAddress",
-          addressLocality: "Hetauda",
+          addressLocality: "Kathmandu / Hetauda",
           addressRegion: "Bagmati",
           addressCountry: "NP",
         },
@@ -121,53 +127,58 @@ export default function RootLayout({
           "https://x.com/irajkumarr_",
         ],
         description:
-          "Professional Flutter Developer and Full Stack Mobile Developer from Nepal. Expert in building mobile apps with Flutter, Dart, Node.js, Express, MongoDB, and Firebase.",
+          "Full-Stack & Flutter Developer specializing in Clean Architecture, BLoC, Riverpod, Node.js, Spring Boot, Redis, and cross-platform mobile development.",
         knowsAbout: [
           "Flutter",
           "Dart",
+          "Clean Architecture",
+          "BLoC",
+          "Riverpod",
           "Node.js",
+          "Spring Boot",
           "Express.js",
           "MongoDB",
+          "Redis",
           "Firebase",
           "REST API",
-          "Provider State Management",
-          "Git",
-          "GitHub",
-          "Mobile App Development",
-          "Full Stack Development",
+          "WebSockets",
+          "Git & GitHub",
         ],
       },
       {
         "@type": "WebSite",
-        "@id": "https://www.timalsinarajkumar.com.np/#website",
-        url: "https://www.timalsinarajkumar.com.np",
-        name: "Raj Kumar Timalsina | Flutter & Full Stack Mobile Developer Portfolio",
+        "@id": "https://timalsinarajkumar.com.np/#website",
+        url: "https://timalsinarajkumar.com.np",
+        name: "Raj Kumar Timalsina | Full-Stack & Flutter Developer Portfolio",
         publisher: {
-          "@id": "https://www.timalsinarajkumar.com.np/#person",
+          "@id": "https://timalsinarajkumar.com.np/#person",
         },
       },
     ],
   };
 
   return (
-    <html lang="en">
+    <html
+      lang="en"
+      className={`${inter.variable} ${jetbrainsMono.variable}`}
+      suppressHydrationWarning
+    >
       <head>
-        <link rel="manifest" href="/site.webmanifest"></link>
+        <link rel="manifest" href="/site.webmanifest" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
-        <style>{`
-html {
-  font-family: ${GeistSans.style.fontFamily};
-  --font-sans: ${GeistSans.variable};
-  --font-mono: ${GeistMono.variable};
-}
-        `}</style>
       </head>
-      <body>
-        <CustomCursor />
-        {children}
+      <body className="min-h-screen bg-zinc-50 dark:bg-[#0a0d14] text-zinc-900 dark:text-zinc-100 font-sans antialiased selection:bg-zinc-200 dark:selection:bg-zinc-800">
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          {children}
+        </ThemeProvider>
       </body>
     </html>
   );
