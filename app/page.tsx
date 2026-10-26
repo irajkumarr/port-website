@@ -160,9 +160,8 @@ export default function Portfolio() {
             >
               <span>Resume</span>
               <svg
-                className={`w-3 h-3 transition-transform duration-200 ${
-                  showResumeDropdown ? "rotate-180" : ""
-                }`}
+                className={`w-3 h-3 transition-transform duration-200 ${showResumeDropdown ? "rotate-180" : ""
+                  }`}
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -304,7 +303,7 @@ export default function Portfolio() {
               <div className="w-64 h-64 sm:w-72 sm:h-72 rounded-full overflow-hidden p-1 bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 transition-transform duration-500 group-hover/avatar:scale-105 shadow-xl shadow-purple-500/10">
                 <div className="w-full h-full rounded-full overflow-hidden bg-gray-900 flex items-center justify-center">
                   <Image
-                    src="./user-image.png"
+                    src="./avatar-opt.webp"
                     alt="Raj Kumar Timalsina - Professional Flutter Developer & Full Stack Mobile Developer Nepal"
                     width={288}
                     height={288}
@@ -345,15 +344,14 @@ export default function Portfolio() {
                       <div className="flex justify-between items-start mb-3 md:mb-4">
                         <Badge
                           variant="secondary"
-                          className={`text-xs md:text-sm ${
-                            project.badgeColor === "blue"
-                              ? "bg-blue-500/20 text-blue-400 border-blue-500/30"
-                              : project.badgeColor === "green"
-                                ? "bg-green-500/20 text-green-400 border-green-500/30"
-                                : project.badgeColor === "yellow"
-                                  ? "bg-yellow-500/20 text-yellow-400 border-yellow-500/30"
-                                  : "bg-red-500/20 text-red-400 border-red-500/30"
-                          }`}
+                          className={`text-xs md:text-sm ${project.badgeColor === "blue"
+                            ? "bg-blue-500/20 text-blue-400 border-blue-500/30"
+                            : project.badgeColor === "green"
+                              ? "bg-green-500/20 text-green-400 border-green-500/30"
+                              : project.badgeColor === "yellow"
+                                ? "bg-yellow-500/20 text-yellow-400 border-yellow-500/30"
+                                : "bg-red-500/20 text-red-400 border-red-500/30"
+                            }`}
                         >
                           {project.type}
                         </Badge>

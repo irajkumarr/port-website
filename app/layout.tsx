@@ -104,7 +104,7 @@ export default function RootLayout({
         alternateName: "Raj K Timalsina",
         jobTitle: "Full Stack Mobile Developer & Flutter Developer",
         url: "https://www.timalsinarajkumar.com.np",
-        image: "https://www.timalsinarajkumar.com.np/user-image.png",
+        image: "https://www.timalsinarajkumar.com.np/avatar-opt.webp",
         address: {
           "@type": "PostalAddress",
           addressLocality: "Hetauda",
