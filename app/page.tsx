@@ -7,6 +7,7 @@ import {
   Phone,
   MapPin,
   FileDown,
+  ExternalLink,
   ArrowUpRight,
 } from "lucide-react";
 import { ThemeToggle } from "@/components/theme-toggle";
@@ -207,11 +208,11 @@ export default function Home() {
         <header className="flex items-center justify-between pt-1 pb-3 sm:pb-3.5 border-b border-zinc-200/80 dark:border-zinc-800/80">
           <Link
             href="/"
-            className="font-mono text-1xl tracking-tight text-zinc-900 dark:text-zinc-100 hover:text-black dark:hover:text-white transition-colors"
+            className="font-mono text-base tracking-tight text-zinc-900 dark:text-zinc-100 hover:text-black dark:hover:text-white transition-colors"
           >
             raj kumar
           </Link>
-          <div className="flex items-center gap-5 sm:gap-6 text-1xl font-mono text-zinc-500 dark:text-zinc-400">
+          <div className="flex items-center gap-5 sm:gap-6 text-sm font-mono text-zinc-500 dark:text-zinc-400">
             <Link
               href="#projects"
               className="hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors hidden sm:inline"
@@ -291,11 +292,13 @@ export default function Home() {
 
                 <a
                   href="/resume.pdf"
-                  download="Raj_Kumar_Timalsina_Resume.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="inline-flex items-center gap-1.5 text-xs font-mono text-zinc-600 dark:text-zinc-400 hover:text-black dark:hover:text-white transition-colors"
+                  title="Open Resume"
                 >
-                  <FileDown className="h-4 w-4" />
-                  <span>Resume (PDF)</span>
+                  <ExternalLink className="h-3.5 w-3.5" />
+                  <span>Resume</span>
                 </a>
               </div>
             </div>
