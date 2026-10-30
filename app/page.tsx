@@ -106,7 +106,7 @@ const experiences = [
     role: "Flutter Developer Intern",
     company: "DevanaSoft Pvt. Ltd.",
     location: "Kathmandu, Nepal (Onsite)",
-    period: "August 2026 — Present",
+    period: "August 2026 — October 2026",
     points: [
       "Developed features for a production networking application using Flutter, Clean Architecture, and BLoC/Cubit.",
       "Implemented local data persistence with Hive to keep core content accessible offline.",
